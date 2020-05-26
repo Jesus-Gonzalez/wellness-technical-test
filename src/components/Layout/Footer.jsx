@@ -49,8 +49,7 @@ export const Footer = () => (
     </div>
 
     <div className={`${styles.copyright} text-center py-3`}>
-      <span>MIT 2020:</span>
-      <a href="#">Jesus Gonzalez Jaen</a>
+      <span>MIT 2020: <a href="#">Jesus Gonzalez Jaen</a></span>
     </div>
   </footer>
 )

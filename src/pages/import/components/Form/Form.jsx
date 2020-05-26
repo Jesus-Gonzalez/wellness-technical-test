@@ -5,7 +5,10 @@ import { Button } from 'components/Button/Button'
 import styles from './Form.module.scss'
 
 const propTypes = {
-  file: PropTypes.instanceOf(File),
+  file: PropTypes.shape({
+    file: PropTypes.instanceOf(File),
+    count: PropTypes.number
+  }),
   handleFileChange: PropTypes.func,
   handleSubmit: PropTypes.func,
 }
@@ -29,7 +32,7 @@ export const Form = (props) => {
             id="file-input-load-data"
           />
           <label className="custom-file-label" for="file-input-load-data">
-            {!file ? 'Choose data file to load' : file}
+            {!file ? 'Choose data file to load' : `${file.file.name} - ${file.count} rows to insert`}
           </label>
         </div>
       </div>
