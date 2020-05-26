@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { load } from 'pages/import/api'
+import * as Api from 'pages/import/api'
 import { readFile } from 'pages/import/utils'
 import { processFile } from 'pages/import/helpers'
 
@@ -20,7 +20,7 @@ export const FormContainer = () => {
 
   const handleSubmit = React.useCallback(event => {
     event.preventDefault()
-    load(file.lines)
+    Api.bulk(file.lines)
   })
 
   return (
