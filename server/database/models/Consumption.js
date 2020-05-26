@@ -1,0 +1,1 @@
+import { RxSchema } from 'rxdb'
