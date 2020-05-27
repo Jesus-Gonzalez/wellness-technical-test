@@ -1,6 +1,1 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
-export default () => (
-  <Link to="/import">Data</Link>
-)
+export { default } from './DataPage'

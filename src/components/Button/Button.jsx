@@ -18,7 +18,7 @@ export const Button = props => {
   const klass = React.useMemo(
     () => [className, 'btn', style && `btn-${style}`, !style && 'btn-primary']
       .filter(k => k).join(' '),
-    [className]
+    [className, style]
   )
 
   return (
