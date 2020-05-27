@@ -2,10 +2,10 @@ import React from 'react'
 
 import { Layout } from './components'
 
-const ImportPage = () => {
+const DataPage = () => {
   return (
     <Layout />
   )
 }
 
-export default ImportPage
+export default DataPage

@@ -1,11 +1,11 @@
 import React from 'react'
 
-export const TableContainer = () => (
+export const Chart = () => (
   <div className="container">
     <div className="row">
       <div className="col">
-        <h2>Table</h2>
-        <div>display here</div>
+        <h2>Chart</h2>
+        <div>chart here</div>
       </div>
     </div>
   </div>

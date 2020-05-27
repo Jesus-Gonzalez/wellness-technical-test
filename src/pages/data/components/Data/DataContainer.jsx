@@ -4,10 +4,13 @@ import { connect } from 'react-redux'
 
 import { fetchConsumptions as fetchConsumptionsAction } from 'core/store/actions'
 
+import { Data } from './Data'
+
 export const DataContainer = (props) => {
   console.log('DataContainer.props', props)
 
   const {
+    data: { items },
     fetchConsumptions
   } = props
 
@@ -15,7 +18,11 @@ export const DataContainer = (props) => {
     fetchConsumptions()
   }, [fetchConsumptions])
 
-  return <h1>DataContainer</h1>
+  return (
+    <Data
+      data={items}
+    />
+  )
 }
 
 const mapStateToProps = state => ({
