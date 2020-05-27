@@ -7,8 +7,8 @@ function* fetchConsumptions() {
   console.log('fetching consumptions')
 
   try {
-    const films = yield call(Api.fetchConsumptions)
-    yield put({ type: ActionTypes.Consumption.FetchSuccess, films })
+    const items = yield call(Api.fetchConsumptions)
+    yield put({ type: ActionTypes.Consumption.FetchSuccess, items })
   } catch {
     yield put({ type: ActionTypes.Consumption.FetchError })
   }

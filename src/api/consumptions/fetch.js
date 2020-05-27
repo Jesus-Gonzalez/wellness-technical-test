@@ -5,8 +5,5 @@ export const fetchConsumptions = data => (
     url: '/consumption',
     method: 'get',
     data
-  }).then(({ data, status }) => ({
-    data,
-    status
-  }))
+  }).then(({ data }) => data)
 )

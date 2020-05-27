@@ -12,14 +12,14 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, { loading: true })
     }
 
-    case ActionTypes.Consumption.Success: {
+    case ActionTypes.Consumption.FetchSuccess: {
       return Object.assign({}, state, {
         loading: false,
         items: action.items
       })
     }
 
-    case ActionTypes.Consumption.Error: {
+    case ActionTypes.Consumption.FetchError: {
       return Object.assign({}, state, {
         error: true,
         loading: false,
