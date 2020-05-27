@@ -39,10 +39,6 @@ export const ChartWrapper = props => {
       keys: ['consumption']
     },
     {
-      title: 'Price',
-      keys: ['price']
-    },
-    {
       title: 'Price-Cost',
       keys: ['price', 'cost']
     }
