@@ -7,8 +7,6 @@ export const ChartRaw = props => {
     axis
   } = props
 
-  console.log('data', data)
-
   return (
     <div className="row">
       <div className="col">

@@ -7,8 +7,6 @@ import { fetchConsumptions as fetchConsumptionsAction } from 'core/store/actions
 import { Data } from './Data'
 
 export const DataContainer = (props) => {
-  console.log('DataContainer.props', props)
-
   const {
     data,
     fetchConsumptions
