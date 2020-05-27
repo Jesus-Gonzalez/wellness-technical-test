@@ -1,1 +1,1 @@
-export * from './Chart'
+export { ChartWrapper as Chart } from './ChartWrapper'

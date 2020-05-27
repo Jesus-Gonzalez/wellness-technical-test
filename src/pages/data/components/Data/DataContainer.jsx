@@ -10,7 +10,7 @@ export const DataContainer = (props) => {
   console.log('DataContainer.props', props)
 
   const {
-    data: { items },
+    data,
     fetchConsumptions
   } = props
 
@@ -20,7 +20,7 @@ export const DataContainer = (props) => {
 
   return (
     <Data
-      data={items}
+      data={data}
     />
   )
 }

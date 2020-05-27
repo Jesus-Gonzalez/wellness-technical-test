@@ -1,12 +1,25 @@
 import React from 'react'
+import C3Chart from 'react-c3js'
 
-export const Chart = () => (
-  <div className="container">
+export const ChartRaw = props => {
+  const {
+    data: { title, ...data },
+    axis
+  } = props
+
+  console.log('data', data)
+
+  return (
     <div className="row">
       <div className="col">
-        <h2>Chart</h2>
-        <div>chart here</div>
+        <h3>{title}</h3>
+        <C3Chart
+          data={data}
+          axis={axis}
+        />
       </div>
     </div>
-  </div>
-)
+  )
+}
+
+export const Chart = React.memo(ChartRaw)
