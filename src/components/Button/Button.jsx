@@ -10,7 +10,8 @@ export const Button = props => {
     children,
     className,
     submit,
-    style
+    style,
+    ...attributes
   } = props
 
   const type = React.useMemo(() => submit ? 'submit' : 'button', [submit])
@@ -22,6 +23,7 @@ export const Button = props => {
 
   return (
     <button
+      {...attributes}
       className={klass}
       type={type}
     >

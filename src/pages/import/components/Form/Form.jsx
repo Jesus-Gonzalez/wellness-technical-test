@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Button } from 'components/Button/Button'
 
 import styles from './Form.module.scss'
+import { FormState } from './FormState.enum'
 
 const propTypes = {
   file: PropTypes.shape({
@@ -16,12 +17,46 @@ const propTypes = {
 export const Form = (props) => {
   const {
     file,
+    formState,
     handleFileChange,
     handleSubmit
   } = props
 
+  const alert = React.useMemo(() => {
+    switch (formState) {
+      case FormState.Submitted:
+        return {
+          klass: 'alert-success',
+          title: 'Data Loaded',
+          content: 'The data has been loaded to the database'
+        }
+
+      case formState === FormState.Error:
+        return {
+          klass: 'alert-danger',
+          title: 'Error',
+          content: 'Error while loading'
+        }
+
+      default:
+        return null
+    }
+  }, [formState])
+
+  const submitDisabled = React.useMemo(() => (
+    formState === FormState.Loading ||
+    !file
+  ), [formState, file])
+
   return (
     <form onSubmit={handleSubmit}>
+      {alert && (
+        <div className={`alert ${alert.klass} mb-3`}>
+          <strong>{alert.title}</strong>
+          <p>{alert.content}</p>
+        </div>
+      )}
+
       <div className="input-group mb-3">
         <div className="custom-file">
           <input
@@ -38,6 +73,7 @@ export const Form = (props) => {
       </div>
 
       <Button
+        disabled={submitDisabled}
         submit
       >
         Load CSV to Database
