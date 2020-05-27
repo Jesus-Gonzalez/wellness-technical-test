@@ -2,7 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Button } from 'components/Button/Button'
 
-import styles from './Form.module.scss'
 import { FormState } from './FormState.enum'
 
 const propTypes = {

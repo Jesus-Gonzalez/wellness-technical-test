@@ -7,9 +7,11 @@ export const Header = () => (
   <nav className={`${styles.wrapper} navbar`}>
     <span className="navbar-brand">
       <img
+        alt="logo"
         className={styles.logo}
         src="/logo.jpg"
       />
+
       <Link to="/">Illum</Link>
     </span>
   </nav>

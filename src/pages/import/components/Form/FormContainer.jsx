@@ -18,7 +18,7 @@ export const FormContainer = () => {
       .then(processFile)
       .then(meta => setFile({ file, ...meta }))
       .catch(error => setError(error))
-  })
+  }, [setFile, setError])
 
   const handleSubmit = React.useCallback(async event => {
     event.preventDefault()
@@ -30,7 +30,7 @@ export const FormContainer = () => {
     } else {
       setFormState(FormState.Error)
     }
-  })
+  }, [setFormState, setFile, file])
 
   return (
     <Form
