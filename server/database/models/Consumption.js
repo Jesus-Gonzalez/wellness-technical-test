@@ -7,4 +7,4 @@ export const ConsumptionSchema = new mongoose.Schema({
   cost: Number
 })
 
-export const ConsumptionModel = mongoose.model('Consumption', ConsumptionSchema)
+export const ConsumptionModel = mongoose.model('consumptions', ConsumptionSchema)

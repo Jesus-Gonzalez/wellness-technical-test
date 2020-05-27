@@ -1,6 +1,7 @@
 import express from 'express'
 import { setupRoutes } from './setupRoutes'
 import bodyParser from 'body-parser'
+import './database'
 
 const app = express()
 
