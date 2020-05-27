@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 import styles from './Header.module.scss'
 
@@ -9,7 +10,7 @@ export const Header = () => (
         className={styles.logo}
         src="/logo.jpg"
       />
-      <span>Illum</span>
+      <Link to="/">Illum</Link>
     </span>
   </nav>
 )

@@ -1,20 +1,22 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Redirect } from 'react-router-dom'
 
 import { Layout } from 'components'
+import LoadingPage from 'pages/loading'
 
 const DataPage = React.lazy(() => import('pages/data'))
 const ImportPage = React.lazy(() => import('pages/import'))
 
 const Routing = () => (
-  <React.Suspense fallback={<div>Loading</div>}>
+  <BrowserRouter>
     <Layout>
-      <BrowserRouter>
+      <React.Suspense fallback={<LoadingPage />}>
+        <Route exact path="/" render={() => <Redirect to="/data" />} />
         <Route exact path='/data' component={DataPage} />
         <Route exact path='/import' component={ImportPage} />
-      </BrowserRouter>
+      </React.Suspense>
     </Layout>
-  </React.Suspense>
+  </BrowserRouter>
 )
 
 export default Routing
