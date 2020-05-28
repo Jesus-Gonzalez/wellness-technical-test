@@ -19,5 +19,9 @@ export default values => {
     errors.price = 'Not a Number'
   }
 
+  if (!values.date) {
+    errors.date = 'Required'
+  }
+
   return errors
 }

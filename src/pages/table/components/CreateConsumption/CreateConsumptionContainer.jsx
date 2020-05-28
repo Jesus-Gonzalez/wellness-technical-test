@@ -8,8 +8,8 @@ export const CreateConsumptionContainer = (props) => {
     setCreating(true)
   }
 
-  const handleSubmit = (...args) => {
-    console.log('submitting')
+  const handleSubmit = values => {
+    console.log('redux action create', values)
   }
 
   return (
