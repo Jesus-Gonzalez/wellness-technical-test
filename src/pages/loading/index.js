@@ -1,5 +1,1 @@
-import React from 'react'
-
-export default () => (
-  <span>Loading...</span>
-)
+export { default } from './LoadingPage'

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const bulk = data => (
+export const bulkConsumption = data => (
   axios({
     url: '/consumption/bulk',
     method: 'post',
