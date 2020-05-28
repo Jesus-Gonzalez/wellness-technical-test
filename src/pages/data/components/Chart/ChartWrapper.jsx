@@ -8,18 +8,14 @@ import styles from './Chart.module.scss'
 export const ChartWrapper = props => {
   const { data } = props
 
-  console.log('start generating values')
-
   const values = React.useMemo(
-    () => console.log('running memo') || data.reduce((acc, item) => ({
+    () => data.reduce((acc, item) => ({
       consumption: acc.consumption.concat(item.consumption),
       cost: acc.cost.concat(item.cost),
       price: acc.price.concat(item.price),
       date: acc.date.concat(new Date(item.date))
     }), { consumption: [], cost: [], price: [], date: [] }
     ), [data])
-
-  console.log('end generating values')
 
   const generateChartConfig = ({ title, keys = [] }) => ({
     title,
@@ -39,8 +35,6 @@ export const ChartWrapper = props => {
     }
   }
 
-  console.log('generate chart config start')
-
   const chartConfigurations = [
     {
       title: 'Consumption',
@@ -52,8 +46,6 @@ export const ChartWrapper = props => {
     }
   ]
     .map(generateChartConfig)
-
-  console.log('generate chart config end')
 
   return (
     <div className="container">

@@ -10,22 +10,22 @@ export const Button = props => {
     children,
     className,
     submit,
-    style,
+    type,
     ...attributes
   } = props
 
-  const type = React.useMemo(() => submit ? 'submit' : 'button', [submit])
+  const buttonType = React.useMemo(() => submit ? 'submit' : 'button', [submit])
   const klass = React.useMemo(
-    () => [className, 'btn', style && `btn-${style}`, !style && 'btn-primary']
+    () => [className, 'btn', type && `btn-${type}`, !type && 'btn-primary']
       .filter(k => k).join(' '),
-    [className, style]
+    [className, type]
   )
 
   return (
     <button
       {...attributes}
       className={klass}
-      type={type}
+      type={buttonType}
     >
       {children}
     </button>

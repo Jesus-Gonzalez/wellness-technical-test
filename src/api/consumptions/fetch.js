@@ -5,5 +5,5 @@ export const fetchConsumptions = data => (
     url: '/consumption',
     method: 'get',
     data
-  }).then(({ data }) => data)
+  }).then(({ data }) => data.sort((a, b) => a.date > b.date ? 1 : -1))
 )

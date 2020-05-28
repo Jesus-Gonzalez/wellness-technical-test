@@ -1,6 +1,7 @@
 import * as ActionTypes from 'core/store/actionTypes'
 
-export const updateConsumptions = item => ({
-  type: ActionTypes.Consumption.Fetch,
-  item
+export const updateConsumption = (item, prev) => ({
+  type: ActionTypes.Consumption.Update,
+  item,
+  prev
 })

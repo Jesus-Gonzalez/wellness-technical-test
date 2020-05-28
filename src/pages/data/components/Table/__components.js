@@ -1,4 +1,7 @@
+export * from './EditableCell'
 export * from './Table'
 export * from './TableEmptyRow'
 export * from './TableRow'
+export * from './TableRowData'
+export * from './TableRowUpdate'
 export * from './TableWrapper'

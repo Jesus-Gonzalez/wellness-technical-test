@@ -3,15 +3,17 @@ import { call, put, takeLatest } from 'redux-saga/effects'
 import * as ActionTypes from 'core/store/actionTypes'
 import * as Api from 'api'
 
-function* fetchConsumptions() {
+function* updateConsumption(action) {
+  const { item, prev } = action
   try {
-    const items = yield call(Api.fetchConsumptions)
-    yield put({ type: ActionTypes.Consumption.FetchSuccess, items })
-  } catch {
-    yield put({ type: ActionTypes.Consumption.FetchError })
+    yield call(Api.updateConsumption, item)
+    yield put({ type: ActionTypes.Consumption.UpdateSuccess, item, prev })
+  } catch (error) {
+    console.error('error', error)
+    yield put({ type: ActionTypes.Consumption.UpdateError, item, prev })
   }
 }
 
-export default function* fetchConsumptionsSaga() {
-  yield takeLatest(ActionTypes.Consumption.Fetch, fetchConsumptions)
+export default function* updateConsumptionSaga() {
+  yield takeLatest(ActionTypes.Consumption.Update, updateConsumption)
 }

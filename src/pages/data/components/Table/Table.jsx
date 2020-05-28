@@ -5,7 +5,7 @@ import {
   TableEmptyRow
 } from './__components'
 
-export const TableRaw = ({ data }) => (
+export const TableRaw = ({ data, ...props }) => (
   <table className="table table-bordered">
     <thead>
       <tr>
@@ -20,6 +20,7 @@ export const TableRaw = ({ data }) => (
       {(!data.items || !data.items.length) && <TableEmptyRow />}
       {data.items.length && data.items.map(item => (
         <TableRow
+          {...props}
           key={item.date}
           item={item}
         />
