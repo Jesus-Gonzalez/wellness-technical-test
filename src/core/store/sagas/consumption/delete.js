@@ -4,11 +4,12 @@ import * as ActionTypes from 'core/store/actionTypes'
 import * as Api from 'api'
 
 function* deleteConsumption(action) {
+  const { item } = action
   try {
-    const result = yield call(Api.deleteConsumption)
-    yield put({ type: ActionTypes.Consumption.DeleteSuccess, item: action.item, result })
+    yield call(Api.deleteConsumption, item)
+    yield put({ type: ActionTypes.Consumption.DeleteSuccess, item })
   } catch {
-    yield put({ type: ActionTypes.Consumption.DeleteError })
+    yield put({ type: ActionTypes.Consumption.DeleteError, item })
   }
 }
 

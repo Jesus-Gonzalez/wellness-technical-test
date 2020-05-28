@@ -8,7 +8,8 @@ import {
 export const TableRow = (props) => {
   const {
     item,
-    updateItem
+    updateItem,
+    deleteItem
   } = props
 
   const [data, setData] = React.useState(null)
@@ -23,11 +24,16 @@ export const TableRow = (props) => {
     setData(null)
   }
 
+  const handleDelete = () => {
+    deleteItem(item)
+  }
+
   if (data === null) {
     return (
       <TableRowData
         data={item}
         handleEdit={handleEdit}
+        handleDelete={handleDelete}
       />
     )
   }

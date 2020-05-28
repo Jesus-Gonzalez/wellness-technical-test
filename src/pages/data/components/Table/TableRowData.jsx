@@ -5,7 +5,8 @@ import { Button } from 'components'
 export const TableRowData = (props) => {
   const {
     data,
-    handleEdit
+    handleEdit,
+    handleDelete
   } = props
 
   return (
@@ -22,7 +23,10 @@ export const TableRowData = (props) => {
           <img alt="update" src="/images/pencil.png" />
         </Button>
 
-        <Button type="invisible">
+        <Button
+          type="invisible"
+          onClick={handleDelete}
+        >
           <img alt="delete" src="/images/trash.png" />
         </Button>
       </td>

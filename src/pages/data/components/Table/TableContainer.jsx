@@ -2,8 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
 
-import { updateConsumption } from 'core/store/actions'
-// import { updateItem, deleteItem } from 'core/store/actions'
+import { updateConsumption, deleteConsumption } from 'core/store/actions'
 
 import { TableWrapper } from './__components'
 
@@ -18,8 +17,8 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  updateItem: compose(dispatch, updateConsumption)
-  // deleteItem: compose(dispatch, deleteItem)
+  updateItem: compose(dispatch, updateConsumption),
+  deleteItem: compose(dispatch, deleteConsumption)
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(TableContainer)

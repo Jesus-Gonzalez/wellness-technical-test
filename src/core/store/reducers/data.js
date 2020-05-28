@@ -61,6 +61,39 @@ export default (state = initialState, action) => {
       })
     }
 
+    case ActionTypes.Consumption.Delete: {
+      const index = state.items
+        .findIndex(item => item._id === action.item._id)
+
+      const nextItems = Array.from(state.items)
+      nextItems.splice(index, 1)
+
+      return Object.assign({}, state, {
+        items: nextItems,
+        status: ActionTypes.Consumption.Delete
+      })
+    }
+
+    case ActionTypes.Consumption.DeleteSuccess: {
+      return Object.assign({}, state, {
+        status: ActionTypes.Consumption.DeleteSuccess
+      })
+    }
+
+    case ActionTypes.Consumption.DeleteError: {
+      const index = state.items
+        .findIndex(item => item._id === action.item._id)
+
+      const nextItems = Array.from(state.items)
+      nextItems.splice(index, 0, action.item)
+
+      return Object.assign({}, state, {
+        error: true,
+        items: nextItems,
+        status: ActionTypes.Consumption.DeleteError
+      })
+    }
+
     default: return state
   }
 }
