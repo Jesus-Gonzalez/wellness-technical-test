@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-export const updateConsumption = data => (
+export const deleteConsumption = data => (
   axios({
     url: '/consumption',
     method: 'delete',
