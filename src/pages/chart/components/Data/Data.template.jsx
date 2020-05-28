@@ -4,7 +4,7 @@ import LoadingPage from 'pages/loading'
 
 import { Chart } from '../__components'
 
-export const Data = props => {
+export const DataTemplate = props => {
   const { data } = props
 
   if (data.loading) {

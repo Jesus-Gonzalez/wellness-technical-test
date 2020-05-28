@@ -4,21 +4,16 @@ import { connect } from 'react-redux'
 
 import { fetchConsumptions as fetchConsumptionsAction } from 'core/store/actions'
 
-import { Data } from './Data'
+import { DataTemplate } from './Data.template'
 
-export const DataContainer = (props) => {
-  const {
-    data,
-    fetchConsumptions
-  } = props
+import { useData } from './useData.hook'
 
-  React.useEffect(() => {
-    fetchConsumptions()
-  }, [fetchConsumptions])
+export const Data = (props) => {
+  const hook = useData(props)
 
   return (
-    <Data
-      data={data}
+    <DataTemplate
+      {...hook}
     />
   )
 }
@@ -31,4 +26,4 @@ const mapDispatchToProps = dispatch => ({
   fetchConsumptions: compose(dispatch, fetchConsumptionsAction)
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(DataContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(Data)

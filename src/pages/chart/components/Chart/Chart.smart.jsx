@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { ChartTemplate } from './__components'
+import { ChartTemplate } from './Chart.template'
 
-import { useChart } from './hook'
+import { useChart } from './useChart.hook'
 
 export const Chart = props => {
   const hook = useChart(props)

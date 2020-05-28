@@ -1,1 +1,1 @@
-export { default as DataContainer } from './DataContainer'
+export { default as Data } from './Data.smart'
