@@ -12,12 +12,8 @@ export const Data = props => {
   }
 
   return (
-    <div>
-      <h1>Consumption</h1>
-
-      <Chart
-        data={data.items}
-      />
-    </div>
+    <Chart
+      data={data.items}
+    />
   )
 }

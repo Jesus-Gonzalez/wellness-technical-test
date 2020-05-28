@@ -1,1 +1,1 @@
-export { ChartWrapper as Chart } from './ChartWrapper'
+export * from './Chart.smart'

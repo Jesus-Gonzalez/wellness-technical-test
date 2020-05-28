@@ -1,12 +1,8 @@
 import React from 'react'
 import moment from 'moment'
 
-import { Chart } from './__components'
-
-import styles from './Chart.module.scss'
-
-export const ChartWrapper = props => {
-  const { data } = props
+export const useChart = configuration => {
+  const { data } = configuration
 
   const values = React.useMemo(
     () => data.reduce((acc, item) => ({
@@ -30,7 +26,8 @@ export const ChartWrapper = props => {
     x: {
       type: 'timeseries',
       tick: {
-        format: date => moment(date).format('YYYY/MM/DD h:m:s')
+        format: date => moment(date).format('YYYY/MM/DD h:m:s'),
+        width: 10
       }
     }
   }
@@ -47,26 +44,9 @@ export const ChartWrapper = props => {
   ]
     .map(generateChartConfig)
 
-  return (
-    <div className="container">
-      <div className="row">
-        <div className={`col ${styles.wrapper}`}>
-          <h2>Chart</h2>
-          <div
-            style={{
-              width: `${data.length * 10}px`
-            }}
-          >
-            {chartConfigurations.map(({ key, ...config }) => (
-              <Chart
-                key={key}
-                axis={axis}
-                data={config}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+  return {
+    data,
+    chartConfigurations,
+    axis
+  }
 }
