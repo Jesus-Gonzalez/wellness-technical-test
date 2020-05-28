@@ -1,0 +1,19 @@
+:global(.has-error) {
+  .input {
+    border: 1px solid red;
+  }
+}
+
+:global(:not(.has-error)) {
+  .input {
+    &:focus {
+      border: 1px solid #ced4da;
+      box-shadow: none;
+    }
+  }
+}
+
+.errorText {
+  font-weight: bold;
+  color: red;
+}
