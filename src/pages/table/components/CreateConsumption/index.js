@@ -1,1 +1,1 @@
-export * from './CreateConsumptionContainer'
+export { default as CreateConsumptionContainer } from './CreateConsumptionContainer'

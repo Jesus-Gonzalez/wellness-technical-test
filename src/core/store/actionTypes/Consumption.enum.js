@@ -9,5 +9,9 @@ export const Consumption = {
 
   Update: 'UPDATE_CONSUMPTIONS',
   UpdateSuccess: 'UPDATE_CONSUMPTIONS_SUCCESS',
-  UpdateError: 'UPDATE_CONSUMPTIONS_ERROR'
+  UpdateError: 'UPDATE_CONSUMPTIONS_ERROR',
+
+  Create: 'CREATE_CONSUMPTIONS',
+  CreateSuccess: 'CREATE_CONSUMPTIONS_SUCCESS',
+  CreateError: 'CREATE_CONSUMPTIONS_ERROR'
 }

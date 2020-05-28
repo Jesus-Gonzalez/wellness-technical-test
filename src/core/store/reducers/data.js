@@ -28,6 +28,29 @@ export default (state = initialState, action) => {
       })
     }
 
+    case ActionTypes.Consumption.Create: {
+      return Object.assign({}, state, {
+        status: ActionTypes.Consumption.Create
+      })
+    }
+
+    case ActionTypes.Consumption.CreateSuccess: {
+      debugger
+      return Object.assign({}, state, {
+        items: state.items
+          .concat(action.item)
+          .sort((a, b) => a.date > b.date ? 1 : -1),
+        status: ActionTypes.Consumption.CreateSuccess
+      })
+    }
+
+    case ActionTypes.Consumption.CreateError: {
+      return Object.assign({}, state, {
+        error: true,
+        status: ActionTypes.Consumption.CreateError
+      })
+    }
+
     case ActionTypes.Consumption.Update: {
       const index = state.items
         .findIndex(item => item._id === action.prev._id)
@@ -93,6 +116,7 @@ export default (state = initialState, action) => {
         status: ActionTypes.Consumption.DeleteError
       })
     }
+
 
     default: return state
   }
