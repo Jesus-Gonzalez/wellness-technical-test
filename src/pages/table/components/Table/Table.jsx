@@ -17,7 +17,7 @@ export const TableRaw = ({ data, ...props }) => (
       </tr>
     </thead>
     <tbody>
-      {(!data.items || !data.items.length) && <TableEmptyRow />}
+      {(!data || !data.items || !data.items.length) && <TableEmptyRow />}
       {data.items.length && data.items.map(item => (
         <TableRow
           {...props}
