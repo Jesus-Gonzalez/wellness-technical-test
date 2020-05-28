@@ -6,7 +6,7 @@ import { Button } from 'components'
 import validate from './validate'
 import onlyNumbers from './onlyNumbers'
 
-import { Input } from './__components'
+import { Input, InputCalendar } from './__components'
 
 const Form = props => {
   const {
@@ -15,13 +15,6 @@ const Form = props => {
 
   return (
     <form onSubmit={handleSubmit} className="d-flex justify-content-center">
-      {/* <div>
-        <Field
-          name="date"
-          component={InputCalendar}
-          label="Date"
-        />
-      </div> */}
       <div className="card mt-2 w-50">
         <div className="card-header">
           <h2>Create Consumption</h2>
@@ -46,6 +39,11 @@ const Form = props => {
             component={Input}
             label="Price"
             normalize={onlyNumbers}
+          />
+
+          <Field
+            name="date"
+            component={InputCalendar}
           />
         </div>
 

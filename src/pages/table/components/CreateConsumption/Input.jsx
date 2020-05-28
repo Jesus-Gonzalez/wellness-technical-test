@@ -5,8 +5,6 @@ import styles from './Input.module.scss'
 export const Input = props => {
   const { input, meta, label } = props
 
-  console.log('meta', meta)
-
   const { dirty, touched, error, submitFailed, valid } = meta
   const hasError = React.useMemo(() => (
     ((dirty && touched) || submitFailed) && !valid && error
