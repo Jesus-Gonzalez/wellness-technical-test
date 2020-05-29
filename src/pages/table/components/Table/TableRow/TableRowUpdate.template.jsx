@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 
 import { Button } from 'components'
 
@@ -14,7 +15,7 @@ export const TableRowUpdateTemplate = (props) => {
 
   return (
     <tr>
-      <td>{data.date}</td>
+      <td>{moment.parseZone(data.date).format('YYYY/MM/DD ha')}</td>
       <EditableCell
         onChange={handleChange('consumption')}
         value={data.consumption}

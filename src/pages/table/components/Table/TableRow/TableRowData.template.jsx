@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 
 import { Button } from 'components'
 
@@ -11,7 +12,7 @@ export const TableRowDataTemplate = (props) => {
 
   return (
     <tr>
-      <td>{item.date}</td>
+      <td>{moment.parseZone(item.date).format('YYYY/MM/DD ha')}</td>
       <td>{item.consumption}</td>
       <td>{item.cost}</td>
       <td>{item.price}</td>
