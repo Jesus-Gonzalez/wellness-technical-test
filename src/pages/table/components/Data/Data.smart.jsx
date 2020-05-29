@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import { fetchConsumptions as fetchConsumptionsAction } from 'core/store/actions'
 
-import { Data } from './Data'
+import { Data } from './Data.template'
 
 import { useData } from './useData.hook'
 
