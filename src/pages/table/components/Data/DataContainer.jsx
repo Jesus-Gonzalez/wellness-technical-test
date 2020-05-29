@@ -6,19 +6,14 @@ import { fetchConsumptions as fetchConsumptionsAction } from 'core/store/actions
 
 import { Data } from './Data'
 
-export const DataContainer = (props) => {
-  const {
-    data,
-    fetchConsumptions
-  } = props
+import { useData } from './useData.hook'
 
-  React.useEffect(() => {
-    fetchConsumptions()
-  }, [fetchConsumptions])
+export const DataContainer = (props) => {
+  const hook = useData()
 
   return (
     <Data
-      data={data}
+      {...hook}
     />
   )
 }
