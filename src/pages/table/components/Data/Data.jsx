@@ -2,7 +2,7 @@ import React from 'react'
 
 import LoadingPage from 'pages/loading'
 
-import { CreateConsumptionContainer, TableContainer } from '../__components'
+import { CreateConsumptionContainer, Table } from '../__components'
 
 export const Data = props => {
   const { data } = props
@@ -17,7 +17,7 @@ export const Data = props => {
 
       <CreateConsumptionContainer />
 
-      <TableContainer
+      <Table
         data={data}
       />
     </div>

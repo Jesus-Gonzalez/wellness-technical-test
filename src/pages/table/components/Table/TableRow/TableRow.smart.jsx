@@ -1,8 +1,8 @@
 import React from 'react'
 
 import {
-  TableRowData,
-  TableRowUpdate
+  DataTemplate,
+  UpdateTemplate
 } from './__components'
 
 export const TableRow = (props) => {
@@ -30,7 +30,7 @@ export const TableRow = (props) => {
 
   if (data === null) {
     return (
-      <TableRowData
+      <DataTemplate
         data={item}
         handleEdit={handleEdit}
         handleDelete={handleDelete}
@@ -39,7 +39,7 @@ export const TableRow = (props) => {
   }
 
   return (
-    <TableRowUpdate
+    <UpdateTemplate
       data={data}
       handleUpdate={handleUpdate}
       handleCancel={handleCancel}

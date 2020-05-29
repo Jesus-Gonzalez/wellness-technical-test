@@ -7,10 +7,10 @@ import {
   deleteConsumption
 } from 'core/store/actions'
 
-import { TableWrapper } from './__components'
+import { TableTemplate } from './__components'
 
-const TableContainer = props => (
-  <TableWrapper {...props} />
+const Table = props => (
+  <TableTemplate {...props} />
 )
 
 const mapDispatchToProps = dispatch => ({
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
   deleteItem: compose(dispatch, deleteConsumption)
 })
 
-export default connect(null, mapDispatchToProps)(TableContainer)
+export default connect(null, mapDispatchToProps)(Table)

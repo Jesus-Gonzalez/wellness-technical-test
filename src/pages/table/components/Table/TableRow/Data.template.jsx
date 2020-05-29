@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Button } from 'components'
 
-export const TableRowData = (props) => {
+export const DataTemplate = (props) => {
   const {
     data,
     handleEdit,
