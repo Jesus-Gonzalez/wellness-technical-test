@@ -12,7 +12,7 @@ export const CreateConsumption = props => {
   } = props
 
   return (
-    <div className="row">
+    <div className="row mb-4">
       <div className="col">
         {!isCreating && (
           <Button

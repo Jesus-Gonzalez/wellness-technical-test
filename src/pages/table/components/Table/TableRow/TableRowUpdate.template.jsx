@@ -4,7 +4,7 @@ import { Button } from 'components'
 
 import { EditableCell } from './__components'
 
-export const UpdateTemplate = (props) => {
+export const TableRowUpdateTemplate = (props) => {
   const {
     data,
     handleCancel,

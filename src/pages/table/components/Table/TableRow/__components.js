@@ -1,3 +1,3 @@
 export * from './EditableCell'
-export * from './Data.template'
-export * from './Update.template'
+export * from './TableRowData.template'
+export * from './TableRowUpdate.template'

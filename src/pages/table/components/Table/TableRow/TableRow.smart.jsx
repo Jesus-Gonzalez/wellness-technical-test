@@ -1,49 +1,26 @@
 import React from 'react'
 
 import {
-  DataTemplate,
-  UpdateTemplate
+  TableRowDataTemplate,
+  TableRowUpdateTemplate
 } from './__components'
 
+import { useTableRow } from './useTableRow.hook'
+
 export const TableRow = (props) => {
-  const {
-    item,
-    updateItem,
-    deleteItem
-  } = props
+  const hook = useTableRow(props)
 
-  const [data, setData] = React.useState(null)
-
-  const handleEdit = () => setData(Object.assign({}, item))
-  const handleCancel = () => setData(null)
-  const handleChange = key => event => setData(
-    Object.assign({}, data, { [key]: event.target.value })
-  )
-  const handleUpdate = () => {
-    updateItem(data, item)
-    setData(null)
-  }
-
-  const handleDelete = () => {
-    deleteItem(item)
-  }
-
-  if (data === null) {
+  if (!hook.isUpdating) {
     return (
-      <DataTemplate
-        data={item}
-        handleEdit={handleEdit}
-        handleDelete={handleDelete}
+      <TableRowDataTemplate
+        {...hook}
       />
     )
   }
 
   return (
-    <UpdateTemplate
-      data={data}
-      handleUpdate={handleUpdate}
-      handleCancel={handleCancel}
-      handleChange={handleChange}
+    <TableRowUpdateTemplate
+      {...hook}
     />
   )
 }

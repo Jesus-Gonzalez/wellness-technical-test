@@ -2,19 +2,19 @@ import React from 'react'
 
 import { Button } from 'components'
 
-export const DataTemplate = (props) => {
+export const TableRowDataTemplate = (props) => {
   const {
-    data,
+    item,
     handleEdit,
     handleDelete
   } = props
 
   return (
     <tr>
-      <td>{data.date}</td>
-      <td>{data.consumption}</td>
-      <td>{data.cost}</td>
-      <td>{data.price}</td>
+      <td>{item.date}</td>
+      <td>{item.consumption}</td>
+      <td>{item.cost}</td>
+      <td>{item.price}</td>
       <td>
         <Button
           type="invisible"
