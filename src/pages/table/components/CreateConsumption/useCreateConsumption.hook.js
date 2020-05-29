@@ -1,17 +1,13 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { compose } from 'redux'
-import { ToastsContainer, ToastsStore } from 'react-toasts'
-
-import { CreateConsumption } from './__components'
+import { ToastsStore } from 'react-toasts'
 
 import * as Actions from 'core/store/actionTypes'
-import { createConsumption } from 'core/store/actions'
 
-const CreateConsumptionContainer = (props) => {
-  const { createItem, data } = props
+export const useCreateConsumption = (configuration) => {
+  const { createItem, data } = configuration
 
   const [isCreating, setCreating] = React.useState(false)
+
   const handleCreateClick = () => {
     setCreating(true)
   }
@@ -38,12 +34,6 @@ const CreateConsumptionContainer = (props) => {
         break
       }
 
-      default: break
-    }
-  }, [data.status])
-
-  React.useEffect(() => {
-    switch (data.status) {
       case Actions.Consumption.Update: {
         ToastsStore.info('Updating item... Wait please...')
         break
@@ -59,12 +49,6 @@ const CreateConsumptionContainer = (props) => {
         break
       }
 
-      default: break
-    }
-  }, [data.status])
-
-  React.useEffect(() => {
-    switch (data.status) {
       case Actions.Consumption.Delete: {
         ToastsStore.info('Deleting item... Wait please...')
         break
@@ -84,24 +68,9 @@ const CreateConsumptionContainer = (props) => {
     }
   }, [data.status])
 
-  return (
-    <>
-      <ToastsContainer store={ToastsStore} />
-      <CreateConsumption
-        isCreating={isCreating}
-        handleCreateClick={handleCreateClick}
-        handleSubmit={handleSubmit}
-      />
-    </>
-  )
+  return {
+    isCreating,
+    handleCreateClick,
+    handleSubmit
+  }
 }
-
-const mapStateToProps = state => ({
-  data: state.data
-})
-
-const mapDispatchToProps = dispatch => ({
-  createItem: compose(dispatch, createConsumption)
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(CreateConsumptionContainer)

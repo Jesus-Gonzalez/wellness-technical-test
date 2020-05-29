@@ -2,9 +2,9 @@ import React from 'react'
 
 import { Button } from 'components'
 
-import { Form } from './__components'
+import { Form } from './components'
 
-export const CreateConsumption = props => {
+export const CreateConsumptionTemplate = props => {
   const {
     isCreating,
     handleCreateClick,

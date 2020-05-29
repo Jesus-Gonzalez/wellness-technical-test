@@ -1,4 +1,4 @@
-export default values => {
+export const validate = values => {
   const errors = {}
 
   if (!values.consumption) {

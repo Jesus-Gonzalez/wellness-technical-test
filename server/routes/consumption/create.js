@@ -18,7 +18,6 @@ export const consumptionPostRoute = app => {
 
     return model.save()
       .then(consumption => {
-        console.log('consumption', consumption)
         res.status(200).end(JSON.stringify(consumption))
       })
       .catch(() => {

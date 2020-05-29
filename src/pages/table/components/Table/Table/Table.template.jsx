@@ -18,7 +18,7 @@ export const TableTemplate = (props) => {
         </tr>
       </thead>
       <tbody>
-        {data.items.length && data.items.map(item => (
+        {!data.items.length ? <tr /> : data.items.map(item => (
           <TableRow
             {...props}
             key={item.date}

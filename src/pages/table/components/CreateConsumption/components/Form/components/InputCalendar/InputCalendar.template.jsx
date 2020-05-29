@@ -1,20 +1,15 @@
 import React from 'react'
 import DatePicker from 'react-datepicker'
 
-import styles from './Input.module.scss'
+import styles from './styles.module.scss'
 
-export const InputCalendar = props => {
-  const { input, meta } = props
-
-  const { dirty, touched, error, submitFailed, valid } = meta
-  const hasError = React.useMemo(() => (
-    ((dirty && touched) || submitFailed) && !valid && error
-  ), [dirty, touched, submitFailed, valid, error])
-
-  const wrapperClass = React.useMemo(() => [
-    'input-group mb-1',
-    hasError && 'has-error'
-  ].filter(k => k).join(' '), [hasError])
+export const InputCalendarTemplate = props => {
+  const {
+    wrapperClass,
+    hasError,
+    error,
+    input
+  } = props
 
   return (
     <div className="mb-3">
@@ -23,6 +18,7 @@ export const InputCalendar = props => {
           type="hidden"
           {...input}
         />
+
         <DatePicker
           {...input}
           selected={input.value}
@@ -30,12 +26,13 @@ export const InputCalendar = props => {
           dateFormat="MMMM d, yyyy h:mm aa"
           className={`form-control ${styles.input}`}
         />
+
         <div className="input-group-append">
           <span className="input-group-text">Date</span>
         </div>
       </div>
       <div className={styles.errorText}>
-        {hasError && meta.error}
+        {hasError && error}
       </div>
     </div>
   )

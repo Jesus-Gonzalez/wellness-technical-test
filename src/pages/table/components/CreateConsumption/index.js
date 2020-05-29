@@ -1,1 +1,1 @@
-export { default as CreateConsumptionContainer } from './CreateConsumptionContainer'
+export { default as CreateConsumptionContainer } from './CreateConsumption.smart'
