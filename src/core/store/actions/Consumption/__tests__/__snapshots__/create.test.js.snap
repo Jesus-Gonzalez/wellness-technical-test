@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`redux actions create should return an action 1`] = `
+Object {
+  "item": Object {
+    "test": "test",
+  },
+  "type": "CREATE_CONSUMPTIONS",
+}
+`;

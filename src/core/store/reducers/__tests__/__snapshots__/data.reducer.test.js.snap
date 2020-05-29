@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`redux reducers data should be functional 1`] = `Object {}`;
+
+exports[`redux reducers data should be functional 2`] = `
+Object {
+  "error": false,
+  "loading": true,
+  "status": "FETCH_CONSUMPTIONS",
+}
+`;
+
+exports[`redux reducers data should be functional 3`] = `
+Object {
+  "error": false,
+  "items": Array [
+    Object {
+      "id": 1,
+    },
+    Object {
+      "id": 2,
+    },
+  ],
+  "loading": false,
+  "status": "FETCH_CONSUMPTIONS_SUCCESS",
+}
+`;

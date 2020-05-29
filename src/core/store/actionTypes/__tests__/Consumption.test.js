@@ -1,7 +1,9 @@
 import { Consumption } from '../Consumption.enum'
 
-describe('Actions', () => {
-  it('Consumption should return the types object', () => {
-    expect(Consumption).toMatchSnapshot()
+describe('redux', () => {
+  describe('Actions', () => {
+    it('Consumption should return the types object', () => {
+      expect(Consumption).toMatchSnapshot()
+    })
   })
 })

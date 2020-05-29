@@ -1,9 +1,11 @@
 import { fetchConsumptions } from '../fetch'
 
-describe('actions', () => {
-  describe('fetch', () => {
-    it('should return an action', () => {
-      expect(fetchConsumptions()).toMatchSnapshot()
+describe('redux', () => {
+  describe('actions', () => {
+    describe('fetch', () => {
+      it('should return an action', () => {
+        expect(fetchConsumptions()).toMatchSnapshot()
+      })
     })
   })
 })

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Actions Consumption should return the types object 1`] = `
+exports[`redux Actions Consumption should return the types object 1`] = `
 Object {
   "Create": "CREATE_CONSUMPTIONS",
   "CreateError": "CREATE_CONSUMPTIONS_ERROR",
