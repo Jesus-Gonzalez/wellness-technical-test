@@ -10,13 +10,17 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.Consumption.Fetch: {
-      return Object.assign({}, state, { loading: true })
+      return Object.assign({}, state, {
+        loading: true,
+        status: ActionTypes.Consumption.Fetch
+      })
     }
 
     case ActionTypes.Consumption.FetchSuccess: {
       return Object.assign({}, state, {
         loading: false,
-        items: action.items
+        items: action.items,
+        status: ActionTypes.Consumption.FetchSuccess
       })
     }
 
@@ -24,18 +28,19 @@ export default (state = initialState, action) => {
       return Object.assign({}, state, {
         error: true,
         loading: false,
-        items: []
+        items: [],
+        status: ActionTypes.Consumption.FetchError
       })
     }
 
     case ActionTypes.Consumption.Create: {
       return Object.assign({}, state, {
+        error: false,
         status: ActionTypes.Consumption.Create
       })
     }
 
     case ActionTypes.Consumption.CreateSuccess: {
-      debugger
       return Object.assign({}, state, {
         items: state.items
           .concat(action.item)
@@ -59,6 +64,7 @@ export default (state = initialState, action) => {
       nextItems.splice(index, 1, action.item)
 
       return Object.assign({}, state, {
+        error: false,
         items: nextItems,
         status: ActionTypes.Consumption.Update
       })
@@ -92,6 +98,7 @@ export default (state = initialState, action) => {
       nextItems.splice(index, 1)
 
       return Object.assign({}, state, {
+        error: false,
         items: nextItems,
         status: ActionTypes.Consumption.Delete
       })
@@ -116,7 +123,6 @@ export default (state = initialState, action) => {
         status: ActionTypes.Consumption.DeleteError
       })
     }
-
 
     default: return state
   }

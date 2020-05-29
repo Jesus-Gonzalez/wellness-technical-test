@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { compose } from 'redux'
-import { ToastsContainer, ToastsStore } from 'react-toasts'
 
 import { createConsumption } from 'core/store/actions'
 
@@ -13,10 +12,7 @@ const CreateConsumptionContainer = (props) => {
   const hook = useCreateConsumption(props)
 
   return (
-    <>
-      <ToastsContainer store={ToastsStore} />
-      <CreateConsumptionTemplate {...hook} />
-    </>
+    <CreateConsumptionTemplate {...hook} />
   )
 }
 
