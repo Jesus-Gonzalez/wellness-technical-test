@@ -25,6 +25,10 @@ export const useForm = () => {
     event.preventDefault()
     setFormState(FormState.Loading)
     const created = await Api.bulkConsumption(file.lines)
+      .catch(() => {
+        setFormState(FormState.Error)
+      })
+
     if (created) {
       setFormState(FormState.Submitted)
       setFile(null)
@@ -47,7 +51,7 @@ export const useForm = () => {
           content: 'The data has been loaded to the database'
         }
 
-      case formState === FormState.Error:
+      case FormState.Error:
         ToastsStore.error('Error while loading')
 
         return {
