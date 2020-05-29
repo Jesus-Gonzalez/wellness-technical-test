@@ -5,7 +5,7 @@ import { ToastsContainer, ToastsStore } from 'react-toasts'
 
 import { createConsumption } from 'core/store/actions'
 
-import { CreateConsumptionTemplate } from './__components'
+import { CreateConsumptionTemplate } from './CreateConsumption.template'
 
 import { useCreateConsumption } from './useCreateConsumption.hook'
 
