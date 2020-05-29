@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Actions Consumption should return the types object 1`] = `
+Object {
+  "Create": "CREATE_CONSUMPTIONS",
+  "CreateError": "CREATE_CONSUMPTIONS_ERROR",
+  "CreateSuccess": "CREATE_CONSUMPTIONS_SUCCESS",
+  "Delete": "DELETE_CONSUMPTIONS",
+  "DeleteError": "DELETE_CONSUMPTIONS_ERROR",
+  "DeleteSuccess": "DELETE_CONSUMPTIONS_SUCCESS",
+  "Fetch": "FETCH_CONSUMPTIONS",
+  "FetchError": "FETCH_CONSUMPTIONS_ERROR",
+  "FetchSuccess": "FETCH_CONSUMPTIONS_SUCCESS",
+  "Update": "UPDATE_CONSUMPTIONS",
+  "UpdateError": "UPDATE_CONSUMPTIONS_ERROR",
+  "UpdateSuccess": "UPDATE_CONSUMPTIONS_SUCCESS",
+}
+`;
