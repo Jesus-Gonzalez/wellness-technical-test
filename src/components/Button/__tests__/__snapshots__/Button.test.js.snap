@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`components Button should be submit if property added 1`] = `
+<button
+  className="btn btn-primary"
+  type="submit"
+>
+  buttonText
+</button>
+`;
+
+exports[`components Button should render 1`] = `
+<button
+  className="btn btn-primary"
+  type="button"
+>
+  buttonText
+</button>
+`;
+
+exports[`components Button should render btn-<type> 1`] = `
+<button
+  className="btn btn-invisible"
+  type="button"
+>
+  buttonText
+</button>
+`;
+
+exports[`components Button should render className 1`] = `
+<button
+  className="test-class-123123 btn btn-primary"
+  type="button"
+>
+  buttonText
+</button>
+`;
