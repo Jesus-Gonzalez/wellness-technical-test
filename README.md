@@ -63,6 +63,10 @@
 - las peticiones de cliente a servidor se lanzan sobre el puerto `3000`,
   siendo `create-react-app` quien crea un proxy en las peticiones del `3000` al `4000`
 
+## Testing
+- se ha realizado el testing unitario de solo 1 componente de cada clase
+  a modo de demostracion, ya que el tiempo para realizar la prueba es limitado
+
 ## Informacion Adicional
 
 - se ha implementado una metodologia distinta en cada pagina (gestion del estado y funcionalidad):
