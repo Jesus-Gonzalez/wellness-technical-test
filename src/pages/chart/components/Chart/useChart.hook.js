@@ -2,16 +2,16 @@ import React from 'react'
 import moment from 'moment'
 
 export const useChart = configuration => {
-  const { data } = configuration
+  const { data: { error, items } } = configuration
 
   const values = React.useMemo(
-    () => data.reduce((acc, item) => ({
+    () => items.reduce((acc, item) => ({
       consumption: acc.consumption.concat(item.consumption),
       cost: acc.cost.concat(item.cost),
       price: acc.price.concat(item.price),
       date: acc.date.concat(new Date(item.date))
     }), { consumption: [], cost: [], price: [], date: [] }
-    ), [data])
+    ), [items])
 
   const generateChartConfig = ({ title, keys = [] }) => ({
     title,
@@ -45,7 +45,8 @@ export const useChart = configuration => {
     .map(generateChartConfig)
 
   return {
-    data,
+    error,
+    items,
     chartConfigurations,
     axis
   }

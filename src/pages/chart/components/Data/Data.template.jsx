@@ -13,7 +13,7 @@ export const DataTemplate = props => {
 
   return (
     <Chart
-      data={data.items}
+      data={data}
     />
   )
 }

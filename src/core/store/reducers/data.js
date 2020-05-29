@@ -11,6 +11,7 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case ActionTypes.Consumption.Fetch: {
       return Object.assign({}, state, {
+        error: false,
         loading: true,
         status: ActionTypes.Consumption.Fetch
       })

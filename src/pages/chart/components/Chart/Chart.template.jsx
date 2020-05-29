@@ -14,7 +14,8 @@ export const ChartTemplate = (props) => {
   const {
     axis,
     chartConfigurations,
-    data
+    items,
+    error
   } = props
 
   return (
@@ -22,11 +23,21 @@ export const ChartTemplate = (props) => {
       <div className="row">
         <div className={`col ${styles.wrapper}`}>
           <h2>Chart</h2>
-          {!data.length && (
+          {error && (
+            <div className="alert alert-danger">
+              <strong className="alert-heading">
+                Error while fetching data
+              </strong>
+              <p>Error while fetching data. Try again later.</p>
+            </div>
+          )}
+
+          {!error && !items.length && (
             <h3>No data to display</h3>
           )}
-          {!data.length ? '' : (
-            <div style={{ width: `${data.length * 10}px` }}>
+
+          {!!items.length && (
+            <div style={{ width: `${items.length * 10}px` }}>
               {chartConfigurations.map(({ key, title, ...data }) => (
                 <div key={key} className="row">
                   <div className="col">
