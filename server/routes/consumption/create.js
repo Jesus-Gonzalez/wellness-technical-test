@@ -12,6 +12,7 @@ export const consumptionPostRoute = app => {
       !consumption.date
     )) {
       res.status(400).end('request-body-empty')
+      next()
     }
 
     const model = new Models.ConsumptionModel(req.body)

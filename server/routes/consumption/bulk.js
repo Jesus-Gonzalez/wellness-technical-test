@@ -5,7 +5,7 @@ import Models from '~/database/models'
 export const consumptionBulkRoute = app => {
   app.post('/consumption/bulk', (req, res, next) => {
     if (!req.body || !req.body.length) {
-      res.status(400)
+      res.status(400).end('missing-body')
       next()
     }
 

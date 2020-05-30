@@ -6,6 +6,7 @@ export const consumptionDeleteRoute = app => {
 
     if (!consumption || !consumption._id) {
       res.status(400).end('request-body-empty')
+      next()
     }
 
     Models.ConsumptionModel
