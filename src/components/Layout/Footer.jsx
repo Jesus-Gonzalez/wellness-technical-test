@@ -7,8 +7,8 @@ export const Footer = () => (
     <div className="container-fluid text-center text-md-left">
       <div className="row">
         <div className="col-md-6 mt-md-0 mt-3">
-          <h5 className="text-uppercase">Footer Content</h5>
-          <p>Here you can use rows and columns to organize your footer content.</p>
+          <h5 className="text-uppercase">About Illum</h5>
+          <p>Compare your light cost-consumption with other users</p>
         </div>
 
         <hr className="clearfix w-100 d-md-none pb-3" />
