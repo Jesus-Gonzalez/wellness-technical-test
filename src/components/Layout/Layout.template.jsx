@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Header, Footer } from './__components'
+import { Header, Footer } from './components'
 
-import styles from './Layout.module.scss'
+import styles from './styles.module.scss'
 
 export const Layout = ({ children }) => (
   <div className={styles.wrapper}>

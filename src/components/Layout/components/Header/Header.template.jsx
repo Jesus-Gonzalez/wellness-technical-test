@@ -1,26 +1,16 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-import styles from './Header.module.scss'
+import { useHeader } from './useHeader.hook'
 
-export const Header = () => {
-  const location = useLocation()
+import styles from './styles.module.scss'
 
-  const [shouldShow, setShouldShow] = React.useState(false)
-  const toggleShow = () => setShouldShow(!shouldShow)
-
-  const getNavItemClass = (path) => [
-    'nav-item',
-    path === location.pathname && 'active'
-  ].filter(k => k).join(' ')
-
-  const collapseClass = React.useMemo(
-    () => [
-      'collapse navbar-collapse',
-      shouldShow && 'show'
-    ].filter(k => k).join(' '),
-    [shouldShow]
-  )
+export const Header = (props) => {
+  const {
+    collapseClass,
+    itemClass,
+    toggleShow
+  } = useHeader(props)
 
   return (
     <nav className={`${styles.wrapper} navbar navbar-expand-lg navbar-light`}>
@@ -41,7 +31,7 @@ export const Header = () => {
       <div className={collapseClass} id="illum-header-navbar">
         <ul className="navbar-nav mr-auto">
           <li
-            className={getNavItemClass('/table')}
+            className={itemClass.table}
           >
             <Link
               className="nav-link"
@@ -52,7 +42,7 @@ export const Header = () => {
           </li>
 
           <li
-            className={getNavItemClass('/chart')}
+            className={itemClass.chart}
           >
             <Link
               className="nav-link"
@@ -63,7 +53,7 @@ export const Header = () => {
           </li>
 
           <li
-            className={getNavItemClass('/import')}
+            className={itemClass.import}
           >
             <Link
               className="nav-link"

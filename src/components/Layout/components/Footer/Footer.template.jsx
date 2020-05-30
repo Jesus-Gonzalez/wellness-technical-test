@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './Footer.module.scss'
+import styles from './styles.module.scss'
 
 export const Footer = () => (
   <footer className={`${styles.wrapper} pt-4`}>
