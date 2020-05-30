@@ -11,9 +11,9 @@ export const TableTemplate = (props) => {
       <thead>
         <tr>
           <th scope="col">date</th>
-          <th scope="col">consumption</th>
-          <th scope="col">cost</th>
-          <th scope="col">price</th>
+          <th scope="col">consumption (kWh)</th>
+          <th scope="col">cost (€/kWh)</th>
+          <th scope="col">price (€)</th>
           <th scope="col">actions</th>
         </tr>
       </thead>
