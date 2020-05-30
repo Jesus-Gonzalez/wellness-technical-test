@@ -1,7 +1,7 @@
-import axios from 'axios'
+import { HttpClient } from 'api/http'
 
 export const updateConsumption = data => (
-  axios({
+  HttpClient({
     url: '/consumption',
     method: 'put',
     data
