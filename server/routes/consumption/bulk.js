@@ -1,11 +1,12 @@
 import moment from 'moment'
 
 import Models from '~/database/models'
+import { ResponseCode } from '~/constants'
 
 export const consumptionBulkRoute = app => {
   app.post('/consumption/bulk', (req, res, next) => {
     if (!req.body || !req.body.length) {
-      res.status(400).end('missing-body')
+      res.status(400).end(ResponseCode.MissingBody)
       next()
     }
 
@@ -14,17 +15,17 @@ export const consumptionBulkRoute = app => {
         date: moment(`${row[0]} ${row[1]}`, 'YYYY-MM-DD h.m'),
         consumption: Number(row[2]),
         price: Number(row[3]),
-        cost: Number(row[4]),
+        cost: Number(row[4])
       })
     ))
 
     Models.ConsumptionModel
       .insertMany(models)
       .then(response => {
-        res.status(200).end()
+        res.status(200).end(ResponseCode.Ok)
       })
-      .catch(error => {
-        res.status(500).end(error)
+      .catch(() => {
+        res.status(500).end(ResponseCode.Error)
       })
       .finally(() => {
         next()

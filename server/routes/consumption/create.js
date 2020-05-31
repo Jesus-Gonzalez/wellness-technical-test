@@ -1,5 +1,7 @@
 import Models from '~/database/models'
 
+import { ResponseCode } from '~/constants'
+
 export const consumptionPostRoute = app => {
   app.post('/consumption', (req, res, next) => {
     const consumption = req.body
@@ -11,7 +13,7 @@ export const consumptionPostRoute = app => {
       !consumption.price ||
       !consumption.date
     )) {
-      res.status(400).end('request-body-empty')
+      res.status(400).end(ResponseCode.MissingBody)
       next()
     }
 
@@ -22,7 +24,7 @@ export const consumptionPostRoute = app => {
         res.status(200).end(JSON.stringify(consumption))
       })
       .catch(() => {
-        res.status(500).end('saving')
+        res.status(500).end(ResponseCode.Error)
       })
       .finally(() => {
         next()

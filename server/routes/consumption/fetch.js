@@ -1,4 +1,5 @@
 import Models from '~/database/models'
+import { ResponseCode } from '~/constants'
 
 export const consumptionFetchRoute = app => {
   app.get('/consumption', (req, res, next) => {
@@ -9,8 +10,8 @@ export const consumptionFetchRoute = app => {
           .type('application/json')
           .end(JSON.stringify(consumptions))
       })
-      .catch(error => {
-        res.status(500).end(error)
+      .catch(() => {
+        res.status(500).end(ResponseCode.Error)
       })
       .finally(() => {
         next()
