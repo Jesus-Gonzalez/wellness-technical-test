@@ -1,1 +1,1 @@
-export * from './InputCalendar.smart'
+export { InputCalendar } from './InputCalendar.smart'

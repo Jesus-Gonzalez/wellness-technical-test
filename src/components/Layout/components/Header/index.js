@@ -1,1 +1,1 @@
-export * from './Header.template'
+export { Header } from './Header.template'

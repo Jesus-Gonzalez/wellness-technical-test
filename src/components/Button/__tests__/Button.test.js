@@ -14,7 +14,7 @@ describe('components', () => {
     it('should render className', () => {
       const Component = renderer.create((
         <Button
-          className="test-class-123123"
+          className='test-class-123123'
         >
           buttonText
         </Button>
@@ -23,19 +23,19 @@ describe('components', () => {
       expect(Component).toMatchSnapshot()
     })
 
-      it('should render btn-<type>', () => {
-        const Component = renderer.create((
-          <Button
-            type="invisible"
-          >
-            buttonText
-          </Button>
-        ))
+    it('should render btn-<type>', () => {
+      const Component = renderer.create((
+        <Button
+          type='invisible'
+        >
+          buttonText
+        </Button>
+      ))
 
-        expect(Component).toMatchSnapshot()
-      })
+      expect(Component).toMatchSnapshot()
+    })
 
-      it('should be submit if property added', () => {
+    it('should be submit if property added', () => {
       const Component = renderer.create((
         <Button
           submit

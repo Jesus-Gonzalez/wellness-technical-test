@@ -1,20 +1,26 @@
-
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { TableRow } from 'pages/table/components/Table'
+
+const propTypes = {
+  data: PropTypes.shape({
+    items: PropTypes.arrayOf(PropTypes.object).isRequired
+  }).isRequired
+}
 
 export const TableTemplate = (props) => {
   const { data } = props
 
   return (
-    <table className="table table-bordered">
+    <table className='table table-bordered'>
       <thead>
         <tr>
-          <th scope="col">date</th>
-          <th scope="col">consumption (kWh)</th>
-          <th scope="col">cost (€/kWh)</th>
-          <th scope="col">price (€)</th>
-          <th scope="col">actions</th>
+          <th scope='col'>date</th>
+          <th scope='col'>consumption (kWh)</th>
+          <th scope='col'>cost (€/kWh)</th>
+          <th scope='col'>price (€)</th>
+          <th scope='col'>actions</th>
         </tr>
       </thead>
       <tbody>
@@ -28,5 +34,6 @@ export const TableTemplate = (props) => {
       </tbody>
     </table>
   )
-
 }
+
+TableTemplate.propTypes = propTypes

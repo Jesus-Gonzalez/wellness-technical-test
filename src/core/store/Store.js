@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { applyMiddleware, createStore, compose } from 'redux'
 import { Provider } from 'react-redux'
 import createSagaMiddleware from 'redux-saga'
@@ -16,6 +17,13 @@ const store = createStore(reducers, composeEnhancers(
 
 sagaMiddleware.run(sagas)
 
+const propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.element
+  ]).isRequired
+}
+
 export const Store = ({ children }) => {
   return (
     <Provider store={store}>
@@ -23,3 +31,5 @@ export const Store = ({ children }) => {
     </Provider>
   )
 }
+
+Store.propTypes = propTypes

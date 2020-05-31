@@ -7,7 +7,8 @@ import styles from './styles.module.scss'
 const propTypes = {
   axis: PropTypes.object,
   chartConfigurations: PropTypes.arrayOf(PropTypes.object),
-  data: PropTypes.arrayOf(PropTypes.object)
+  items: PropTypes.arrayOf(PropTypes.object),
+  error: PropTypes.bool
 }
 
 export const ChartTemplate = (props) => {
@@ -19,13 +20,13 @@ export const ChartTemplate = (props) => {
   } = props
 
   return (
-    <div className="container">
-      <div className="row">
+    <div className='container'>
+      <div className='row'>
         <div className={`col ${styles.wrapper}`}>
           <h2>Chart</h2>
           {error && (
-            <div className="alert alert-danger">
-              <strong className="alert-heading">
+            <div className='alert alert-danger'>
+              <strong className='alert-heading'>
                 Error while fetching data
               </strong>
               <p>Error while fetching data. Try again later.</p>
@@ -39,8 +40,8 @@ export const ChartTemplate = (props) => {
           {!!items.length && (
             <div style={{ width: `${items.length * 10}px` }}>
               {chartConfigurations.map(({ key, title, ...data }) => (
-                <div key={key} className="row">
-                  <div className="col">
+                <div key={key} className='row'>
+                  <div className='col'>
                     <h3>{title}</h3>
                     <C3Chart
                       data={data}

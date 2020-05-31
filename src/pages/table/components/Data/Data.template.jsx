@@ -1,9 +1,22 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { ToastsContainer, ToastsStore } from 'react-toasts'
 
 import LoadingPage from 'pages/loading'
 
 import { CreateConsumptionContainer, Table } from '../__components'
+
+const propTypes = {
+  data: PropTypes.shape({
+    error: PropTypes.bool.isRequired,
+    loading: PropTypes.bool.isRequired,
+    items: PropTypes.arrayOf(PropTypes.object).isRequired
+  }).isRequired,
+  errorMessage: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    content: PropTypes.string.isRequired
+  })
+}
 
 export const DataTemplate = props => {
   const { data, errorMessage } = props
@@ -17,8 +30,8 @@ export const DataTemplate = props => {
       <ToastsContainer store={ToastsStore} />
 
       {data.error && (
-        <div className="alert alert-danger">
-          <strong className="alert-heading">{errorMessage.title}</strong>
+        <div className='alert alert-danger'>
+          <strong className='alert-heading'>{errorMessage.title}</strong>
           <p>{errorMessage.content}</p>
         </div>
       )}
@@ -42,3 +55,5 @@ export const DataTemplate = props => {
     </div>
   )
 }
+
+DataTemplate.propTypes = propTypes

@@ -54,8 +54,8 @@
 
 ## Comandos Disponibles
 - ejecutar aplicacion: `npm start`: se ejecuta bajo el puerto `3000` en `localhost`
-- lintear aplcacion: `npm lint`
-- correr tests: `npm test`
+- lintear aplcacion: `npm run lint`
+- correr tests: `npm run test`
 
 ## Infraestructura
 - la aplicacion cliente se ejecuta sobre el puerto `3000`

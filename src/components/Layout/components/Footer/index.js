@@ -1,1 +1,1 @@
-export * from './Footer.template'
+export { Footer } from './Footer.template'

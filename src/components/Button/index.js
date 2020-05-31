@@ -1,1 +1,1 @@
-export * from './Button.template'
+export { Button } from './Button.template'

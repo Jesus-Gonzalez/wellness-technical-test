@@ -11,11 +11,11 @@ const propTypes = {
   submitDisabled: PropTypes.bool,
   formState: PropTypes.number,
   file: PropTypes.shape({
-    file: PropTypes.instanceOf(File),
+    file: PropTypes.instanceOf(window.File),
     count: PropTypes.number
   }),
   handleFileChange: PropTypes.func,
-  handleSubmit: PropTypes.func,
+  handleSubmit: PropTypes.func
 }
 
 export const FormTemplate = (props) => {
@@ -43,16 +43,16 @@ export const FormTemplate = (props) => {
         </div>
       )}
 
-      <div className="input-group mb-3">
-        <div className="custom-file">
+      <div className='input-group mb-3'>
+        <div className='custom-file'>
           <input
-            type="file"
-            className="custom-file-input"
+            type='file'
+            className='custom-file-input'
             onChange={handleFileChange}
-            accept=".csv"
-            id="file-input-load-data"
+            accept='.csv'
+            id='file-input-load-data'
           />
-          <label className="custom-file-label" htmlFor="file-input-load-data">
+          <label className='custom-file-label' htmlFor='file-input-load-data'>
             {!file
               ? 'Choose data file to load'
               : `${file.file.name} - ${file.count} rows to insert`}

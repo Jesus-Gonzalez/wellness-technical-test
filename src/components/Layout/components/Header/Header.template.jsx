@@ -14,28 +14,28 @@ export const Header = (props) => {
 
   return (
     <nav className={`${styles.wrapper} navbar navbar-expand-lg navbar-light`}>
-      <span className="navbar-brand">
+      <span className='navbar-brand'>
         <img
-          alt="logo"
+          alt='logo'
           className={styles.logo}
-          src="/logo.jpg"
+          src='/logo.jpg'
         />
 
-        <Link className="navbar-brand" to="/">Illum</Link>
+        <Link className='navbar-brand' to='/'>Illum</Link>
       </span>
 
-      <button className="navbar-toggler" type="button" onClick={toggleShow}>
-        <span className="navbar-toggler-icon"></span>
+      <button className='navbar-toggler' type='button' onClick={toggleShow}>
+        <span className='navbar-toggler-icon' />
       </button>
 
-      <div className={collapseClass} id="illum-header-navbar">
-        <ul className="navbar-nav mr-auto">
+      <div className={collapseClass} id='illum-header-navbar'>
+        <ul className='navbar-nav mr-auto'>
           <li
             className={itemClass.table}
           >
             <Link
-              className="nav-link"
-              to="/table"
+              className='nav-link'
+              to='/table'
             >
               DataTable
             </Link>
@@ -45,8 +45,8 @@ export const Header = (props) => {
             className={itemClass.chart}
           >
             <Link
-              className="nav-link"
-              to="/chart"
+              className='nav-link'
+              to='/chart'
             >
               Chart
             </Link>
@@ -56,8 +56,8 @@ export const Header = (props) => {
             className={itemClass.import}
           >
             <Link
-              className="nav-link"
-              to="/import"
+              className='nav-link'
+              to='/import'
             >
               Import
             </Link>

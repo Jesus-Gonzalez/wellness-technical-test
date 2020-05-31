@@ -1,5 +1,5 @@
 export const readFile = file => new Promise((resolve, reject) => {
-  const reader = new FileReader()
+  const reader = new window.FileReader()
 
   reader.readAsText(file)
 

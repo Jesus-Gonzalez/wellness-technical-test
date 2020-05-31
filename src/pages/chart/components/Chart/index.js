@@ -1,1 +1,1 @@
-export * from './Chart.smart'
+export { Chart } from './Chart.smart'

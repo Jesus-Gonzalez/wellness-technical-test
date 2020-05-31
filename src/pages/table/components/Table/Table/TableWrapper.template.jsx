@@ -1,20 +1,23 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import { Table } from './__components'
 
-export const TableWrapper = props => {
-  const { data } = props
+const propTypes = {
+  data: PropTypes.shape({
+    items: PropTypes.arrayOf(PropTypes.object).isRequired
+  }).isRequired
+}
 
-  return (
-    <div className="container">
-      <div className="row">
-        <div className="col mt-3">
-          <h2 className="mb-2">Table</h2>
-          {(!data || !data.items || !data.items.length)
-            ? <Empty />
-            : <Table />}
-        </div>
+export const TableWrapper = props => (
+  <div className='container'>
+    <div className='row'>
+      <div className='col mt-3'>
+        <h2 className='mb-2'>Table</h2>
+        <Table />
       </div>
     </div>
-  )
-}
+  </div>
+)
+
+TableWrapper.propTypes = propTypes

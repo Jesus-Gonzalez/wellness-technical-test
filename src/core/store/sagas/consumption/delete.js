@@ -3,7 +3,7 @@ import { call, put, takeLatest } from 'redux-saga/effects'
 import * as ActionTypes from 'core/store/actionTypes'
 import * as Api from 'api'
 
-function* deleteConsumption(action) {
+function * deleteConsumption (action) {
   const { item } = action
   try {
     yield call(Api.deleteConsumption, item)
@@ -13,6 +13,6 @@ function* deleteConsumption(action) {
   }
 }
 
-export default function* deleteConsumptionsSaga() {
+export default function * deleteConsumptionsSaga () {
   yield takeLatest(ActionTypes.Consumption.Delete, deleteConsumption)
 }

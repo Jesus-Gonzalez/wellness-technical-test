@@ -6,7 +6,7 @@ import { FormTemplate } from './Form.template'
 import { validate } from './helpers'
 
 const Form = props => (
-  <FormTemplate { ...props } />
+  <FormTemplate {...props} />
 )
 
 export default reduxForm({

@@ -3,7 +3,7 @@ import { call, put, takeLatest } from 'redux-saga/effects'
 import * as ActionTypes from 'core/store/actionTypes'
 import * as Api from 'api'
 
-function* updateConsumption(action) {
+function * updateConsumption (action) {
   const { item, prev } = action
   try {
     yield call(Api.updateConsumption, item)
@@ -14,6 +14,6 @@ function* updateConsumption(action) {
   }
 }
 
-export default function* updateConsumptionSaga() {
+export default function * updateConsumptionSaga () {
   yield takeLatest(ActionTypes.Consumption.Update, updateConsumption)
 }

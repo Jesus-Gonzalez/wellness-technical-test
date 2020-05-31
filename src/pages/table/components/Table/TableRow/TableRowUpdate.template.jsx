@@ -1,9 +1,17 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import moment from 'moment'
 
 import { Button } from 'components'
 
 import { EditableCell } from './__components'
+
+const propTypes = {
+  data: PropTypes.object.isRequired,
+  handleCancel: PropTypes.func.isRequired,
+  handleUpdate: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired
+}
 
 export const TableRowUpdateTemplate = (props) => {
   const {
@@ -31,14 +39,14 @@ export const TableRowUpdateTemplate = (props) => {
 
       <td>
         <Button
-          type="invisible"
+          type='invisible'
           onClick={handleUpdate}
         >
           Update
         </Button>
 
         <Button
-          type="invisible"
+          type='invisible'
           onClick={handleCancel}
         >
           Cancel
@@ -47,3 +55,5 @@ export const TableRowUpdateTemplate = (props) => {
     </tr>
   )
 }
+
+TableRowUpdateTemplate.propTypes = propTypes

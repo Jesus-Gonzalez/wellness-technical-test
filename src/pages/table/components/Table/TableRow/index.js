@@ -1,1 +1,1 @@
-export * from './TableRow.smart'
+export { TableRow } from './TableRow.smart'

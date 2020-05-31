@@ -1,1 +1,1 @@
-export * from './Input.smart'
+export { Input } from './Input.smart'

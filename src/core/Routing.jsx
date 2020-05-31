@@ -12,7 +12,7 @@ const Routing = () => (
   <BrowserRouter>
     <Layout>
       <React.Suspense fallback={<LoadingPage />}>
-        <Route exact path="/" render={() => <Redirect to="/table" />} />
+        <Route exact path='/' render={() => <Redirect to='/table' />} />
         <Route exact path='/table' component={TablePage} />
         <Route exact path='/chart' component={ChartPage} />
         <Route exact path='/import' component={ImportPage} />

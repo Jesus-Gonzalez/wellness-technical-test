@@ -1,1 +1,1 @@
-export * from './Spinner.template'
+export { Spinner } from './Spinner.template'

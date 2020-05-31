@@ -1,1 +1,1 @@
-export * from './EditableCell.template'
+export { EditableCell } from './EditableCell.template'

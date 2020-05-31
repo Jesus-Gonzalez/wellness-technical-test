@@ -1,1 +1,1 @@
-export * from './Form.smart'
+export { FormContainer } from './Form.smart'

@@ -6,6 +6,6 @@ export const processFile = content => {
 
   return {
     lines,
-    count: lines.length,
+    count: lines.length
   }
 }

@@ -1,7 +1,14 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import moment from 'moment'
 
 import { Button } from 'components'
+
+const propTypes = {
+  item: PropTypes.object.isRequired,
+  handleEdit: PropTypes.func.isRequired,
+  handleDelete: PropTypes.func.isRequired
+}
 
 export const TableRowDataTemplate = (props) => {
   const {
@@ -18,19 +25,21 @@ export const TableRowDataTemplate = (props) => {
       <td>{item.price}</td>
       <td>
         <Button
-          type="invisible"
+          type='invisible'
           onClick={handleEdit}
         >
-          <img alt="update" src="/images/pencil.png" />
+          <img alt='update' src='/images/pencil.png' />
         </Button>
 
         <Button
-          type="invisible"
+          type='invisible'
           onClick={handleDelete}
         >
-          <img alt="delete" src="/images/trash.png" />
+          <img alt='delete' src='/images/trash.png' />
         </Button>
       </td>
     </tr>
   )
 }
+
+TableRowDataTemplate.propTypes = propTypes

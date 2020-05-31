@@ -1,3 +1,10 @@
 {
-  "extends": "standard"
+  "env": {
+    "jest": true
+  },
+  "parser": "babel-eslint",
+  "extends": [
+    "standard-react",
+    "standard"
+  ]
 }
