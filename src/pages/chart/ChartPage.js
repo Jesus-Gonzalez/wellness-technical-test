@@ -2,10 +2,10 @@ import React from 'react'
 
 import { Layout } from './components'
 
-const DataPage = () => {
+const ChartPage = () => {
   return (
     <Layout />
   )
 }
 
-export default DataPage
+export default ChartPage
